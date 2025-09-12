@@ -45,12 +45,13 @@ createPlatform(90, 400, 30, 10, "cyan"); //finish platform
     // TODO 3 - Create Collectables
 createCollectable("database", 660, 590);
 createCollectable("database", 1180, 200);
-//createCollectable("database", )
+createCollectable("database", 350, 260);
+createCollectable("database", 1030, 60);
     
     // TODO 4 - Create Cannons
-
-
-    
+createCannon("right", 100, 100);
+createCannon("left", 500, 1000);
+createCannon("top", 800, 1000);
     
     //////////////////////////////////
     // ONLY CHANGE ABOVE THIS POINT //
