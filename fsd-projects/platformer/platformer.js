@@ -49,7 +49,7 @@ createCollectable("database", 350, 260);
 createCollectable("database", 1030, 60);
     
     // TODO 4 - Create Cannons
-createCannon("right", 100, 100);
+createCannon("right", 100, 1000);
 createCannon("left", 500, 1000);
 createCannon("top", 800, 1000);
     
