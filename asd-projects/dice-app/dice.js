@@ -30,21 +30,21 @@ function rollDie(dieId) {
   var randomNum = Math.ceil(Math.random() * 6);
   console.log(randomNum);
   if (randomNum === 1) {
-    makeDot(42.5, 42.5, dieId); // middle middle
+    makeDot(212.5, 212.5, dieId); // middle middle
   } else if (randomNum === 2) {
     makeDot(87.5, 87.5, dieId); // top left
     makeDot(337.5, 337.5, dieId); // bottom right
   } else if (randomNum === 3) {
     makeDot(87.5, 87.5, dieId); // top left
     makeDot(337.5, 337.5, dieId); // bottom right
-    makeDot(42.5, 42.5, dieId); // middle middle
+    makeDot(212.5, 212.5, dieId); // middle middle
   } else if (randomNum === 4) {
     makeDot(337.5, 337.5, dieId); // bottom right
     makeDot(87.5, 87.5, dieId); // top left
     makeDot(87.5, 337.5, dieId); // top right
     makeDot(337.5, 87.5, dieId); // bottom left
   } else if (randomNum === 5) {
-    makeDot(42.5, 42.5, dieId); // middle middle
+    makeDot(212.5, 212.5, dieId); // middle middle
     makeDot(337.5, 337.5, dieId); // bottom right
     makeDot(87.5, 87.5, dieId); // top left
     makeDot(87.5, 337.5, dieId); // top right
