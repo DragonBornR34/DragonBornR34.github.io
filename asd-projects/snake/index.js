@@ -114,7 +114,14 @@ function moveSnake() {
     stored in the Array snake.body and each part knows its current 
     column/row properties. 
   */
+ for ( var i = snake.body.length - 1; i > 0; i --)/* start, stop, and update statements to loop backwards through the indexes of snake.body */ {
+    var currentSnakeSquare = snake.body[i];
+    var snakeSquareInFront = snake.body[i - 1];
+    
+    moveBodyAToBodyB(currentSnakeSquare, snakeSquareInFront);
 
+    repositionSquare(currentSnakeSquare);
+}
   //Before moving the head, check for a new direction from the keyboard input
   checkForNewDirection();
 
@@ -142,11 +149,11 @@ bodyA.row = bodyB.row;
 bodyA.colum = bodyB.colum
 bodyA.direction = bodyB.direction;
 }
-console.log("Moving body A to body B...");
-setTimeout(() => {
-  moveBodyAToBodyB(snake.body[1], snake.head);
-  repositionSquare(snake.body[1]);
-}, 2_000);
+// console.log("Moving body A to body B...");
+// setTimeout(() => {
+//   moveBodyAToBodyB(snake.body[1], snake.head);
+//   repositionSquare(snake.body[1]);
+// }, 2_000);
 
 function hasHitWall() {
   /* 
