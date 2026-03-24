@@ -95,13 +95,13 @@ function checkForNewDirection(event) {
   perpendicular to the current direction
   */
 
-  if (activeKey === KEY.LEFT) {
+  if (activeKey === KEY.LEFT || activeKey === KEY.A) {
     snake.head.direction = "left";
-  } else if (activeKey === KEY.RIGHT) {
+  } else if (activeKey === KEY.RIGHT || activeKey === KEY.D) {
     snake.head.direction = "right";
-  } else if (activeKey === KEY.UP) {
+  } else if (activeKey === KEY.UP || activeKey === KEY.W) {
     snake.head.direction = "up";
-  } else if (activeKey === KEY.DOWN) {
+  } else if (activeKey === KEY.DOWN || activeKey === KEY.S) {
     snake.head.direction = "down";
   }
   // FILL IN THE REST
@@ -150,7 +150,7 @@ function moveSnake() {
 // TODO 9: Create a new helper function
 function moveBodyAToBodyB (bodyA, bodyB) {
 bodyA.row = bodyB.row;
-bodyA.column = bodyB.column
+bodyA.column = bodyB.column;
 bodyA.direction = bodyB.direction;
 }
 // console.log("Moving body A to body B...");
@@ -160,8 +160,10 @@ bodyA.direction = bodyB.direction;
 // }, 2_000);
 
 function hasHitWall() {
-  if (snake.head.row > 0 || snake.head.row >= ROWS) {
-    
+  if (snake.head.row < 0 || snake.head.row >= ROWS) {
+    return true
+  } else if (snake.head.column < 0 || snake.head.column >= COLUMNS) {
+    return true
   }
   /* 
     TODO 11: Should return true if the snake's head has collided with the four walls of the
@@ -169,8 +171,9 @@ function hasHitWall() {
     
     HINT: What will the row and column of the snake's head be if this were the case?
   */
-
+ else {
   return false;
+ }
 }
 
 function hasCollidedWithApple() {
@@ -295,10 +298,14 @@ function handleKeyDown(event) {
     event.which === KEY.LEFT ||
     event.which === KEY.RIGHT ||
     event.which === KEY.UP ||
-    event.which === KEY.DOWN
+    event.which === KEY.DOWN ||
+    event.which === KEY.W ||
+    event.which === KEY.A ||
+    event.which === KEY.S ||
+    event.which === KEY.D
   ) {
     started = true; // the game starts when the first key is pressed
-  }
+  } 
 }
 
 /* Given a gameSquare (which may be a snakeSquare or the apple), position
