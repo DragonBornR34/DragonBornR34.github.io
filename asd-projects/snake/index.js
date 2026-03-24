@@ -28,6 +28,10 @@ const KEY = {
   UP: 38,
   RIGHT: 39,
   DOWN: 40,
+  W: 87,
+  A: 65,
+  S: 83,
+  D: 68,
 };
 
 // interval variable required for stopping the update function when the game ends
@@ -156,6 +160,9 @@ bodyA.direction = bodyB.direction;
 // }, 2_000);
 
 function hasHitWall() {
+  if (snake.head.row > 0 || snake.head.row >= ROWS) {
+    
+  }
   /* 
     TODO 11: Should return true if the snake's head has collided with the four walls of the
     board, false otherwise.
