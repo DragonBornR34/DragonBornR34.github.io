@@ -211,8 +211,10 @@ function hasCollidedWithSnake() {
     var currentSquare = snake.body.length[i];
     if (currentSquare.row === snake.head.row && 
       currentSquare.column === snake.head.column) 
-      {
-    } return false;
+      { return true 
+    } 
+  }
+  return false;
 }
   /* 
     TODO 13: Should return true if the snake's head has collided with any part of the
@@ -222,7 +224,6 @@ function hasCollidedWithSnake() {
     head and each part of the snake's body also knows its own row and column.
   */
 
-}
 
 function endGame() {
   // stop update function from running
@@ -348,7 +349,7 @@ function getRandomAvailablePosition() {
       var snakePart = snake.body[i];
       if (
         currentSnakePart.row === snake.head.row &&
-        currentSnakePartG.column === snake.head.column
+        currentSnakePart.column === snake.head.column
       ) {
         return true;
       } else {
