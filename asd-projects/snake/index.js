@@ -207,12 +207,13 @@ function handleAppleCollision() {
 }
 
 function hasCollidedWithSnake() {
-  for (var i = 1; i < snake.length; i++) {
+  for (var i = 1; i < snake.body.length; i++) {
     var currentSquare = snake.body.length[i];
-    if (currentSquare.row === snake.head.row && 
-      currentSquare.column === snake.head.column) 
-      { return true 
-    } 
+    if (snake.body[i].row === snake.head.row && 
+      currentSquare.column === snake.head.column
+    ) {
+      return true;
+    }
   }
   return false;
 }
@@ -345,15 +346,18 @@ function getRandomAvailablePosition() {
     randomPosition.column = Math.floor(Math.random() * COLUMNS);
     randomPosition.row = Math.floor(Math.random() * ROWS);
     spaceIsAvailable = true;
+
     for (var i = 0; i < snake.body.length; i++) {
       var snakePart = snake.body[i];
       if (
-        currentSnakePart.row === snake.head.row &&
-        currentSnakePart.column === snake.head.column
+        snakePart.row === snake.head.row &&
+        snakePart.column === snake.head.column
       ) {
         return true;
-      } else {
-        return false
+        } else { 
+          return false
+        }
+
       }
     }
     /*
@@ -362,9 +366,6 @@ function getRandomAvailablePosition() {
       spaceIsAvailable to false so that a new position is generated.
     */
   }
-
-  return randomPosition;
-}
 
 function calculateHighScore() {
   // retrieve the high score from session storage if it exists, or set it to 0
