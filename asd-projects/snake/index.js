@@ -177,6 +177,11 @@ function hasHitWall() {
 }
 
 function hasCollidedWithApple() {
+  if (snake.head.row === apple.row && snake.head.column === apple.column) {
+    return true;
+  } else {
+    return false;
+  }
   /* 
     TODO 12: Should return true if the snake's head has collided with the apple, 
     false otherwise
@@ -184,7 +189,6 @@ function hasCollidedWithApple() {
     HINT: Both the apple and the snake's head are aware of their own row and column
   */
 
-  return false;
 }
 
 function handleAppleCollision() {
@@ -203,6 +207,15 @@ function handleAppleCollision() {
 }
 
 function hasCollidedWithSnake() {
+  for (var i = 1; i < snake.length; i++) {
+    var currentSquare = snake.body[i];
+    if (currentSquare.row === snake.head.row && 
+      currentSquare.column === snake.head.column) {
+      return true
+    } else {
+      return false;
+  }
+}
   /* 
     TODO 13: Should return true if the snake's head has collided with any part of the
     snake's body.
@@ -211,7 +224,6 @@ function hasCollidedWithSnake() {
     head and each part of the snake's body also knows its own row and column.
   */
 
-  return false;
 }
 
 function endGame() {
@@ -334,7 +346,17 @@ function getRandomAvailablePosition() {
     randomPosition.column = Math.floor(Math.random() * COLUMNS);
     randomPosition.row = Math.floor(Math.random() * ROWS);
     spaceIsAvailable = true;
-
+    for (var i = 0; i < snake.body.length; i++) {
+      var snakePart = snake.body[i];
+      if (
+        currentSnakeSquare.row === snake.head.row &&
+        currentSnakeSquare.column === snake.head.column
+      ) {
+        return true;
+      } else {
+        return false
+      }
+    }
     /*
       TODO 14: After generating the random position determine if that position is
       not occupied by a snakeSquare in the snake's body. If it is then set 
