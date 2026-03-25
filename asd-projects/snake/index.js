@@ -208,13 +208,11 @@ function handleAppleCollision() {
 
 function hasCollidedWithSnake() {
   for (var i = 1; i < snake.length; i++) {
-    var currentSquare = snake.body[i];
+    var currentSquare = snake.body.length[i];
     if (currentSquare.row === snake.head.row && 
-      currentSquare.column === snake.head.column) {
-      return true
-    } else {
-      return false;
-  }
+      currentSquare.column === snake.head.column) 
+      {
+    } return false;
 }
   /* 
     TODO 13: Should return true if the snake's head has collided with any part of the
@@ -349,8 +347,8 @@ function getRandomAvailablePosition() {
     for (var i = 0; i < snake.body.length; i++) {
       var snakePart = snake.body[i];
       if (
-        currentSnakeSquare.row === snake.head.row &&
-        currentSnakeSquare.column === snake.head.column
+        currentSnakePart.row === snake.head.row &&
+        currentSnakePartG.column === snake.head.column
       ) {
         return true;
       } else {
