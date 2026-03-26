@@ -208,10 +208,9 @@ function handleAppleCollision() {
 
 function hasCollidedWithSnake() {
   for (var i = 1; i < snake.body.length; i++) {
-    var currentSquare = snake.body.length[i];
+    var currentSquare = snake.body[i];
     if (snake.body[i].row === snake.head.row && 
-      currentSquare.column === snake.head.column
-    ) {
+      currentSquare.column === snake.head.column) {
       return true;
     }
   }
@@ -350,14 +349,12 @@ function getRandomAvailablePosition() {
     for (var i = 0; i < snake.body.length; i++) {
       var snakePart = snake.body[i];
       if (
-        snakePart.row === snake.head.row &&
-        snakePart.column === snake.head.column
+        snakePart.row === randomPosition.row &&
+        snakePart.column === randomPosition.column
       ) {
-        return true;
-        } else { 
-          return false
+        return false;
+        
         }
-
       }
     }
     /*
