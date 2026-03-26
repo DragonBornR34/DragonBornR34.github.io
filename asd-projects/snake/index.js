@@ -87,7 +87,7 @@ function update() {
   }
 }
 
-function checkForNewDirection(event) {
+function checkForNewDirection() {
   /* 
   TODO 7: Update snake.head.direction based on the value of activeKey.
 
