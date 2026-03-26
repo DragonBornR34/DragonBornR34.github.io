@@ -352,8 +352,7 @@ function getRandomAvailablePosition() {
         snakePart.row === randomPosition.row &&
         snakePart.column === randomPosition.column
       ) {
-        return false;
-        
+        spaceIsAvailable = false;
         }
       }
     }
