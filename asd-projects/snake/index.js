@@ -356,6 +356,7 @@ function getRandomAvailablePosition() {
         }
       }
     }
+    return randomPosition;
     /*
       TODO 14: After generating the random position determine if that position is
       not occupied by a snakeSquare in the snake's body. If it is then set 
