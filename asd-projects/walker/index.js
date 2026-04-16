@@ -10,7 +10,17 @@ function runProgram(){
   // Constant Variables
   var FRAME_RATE = 60;
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
-  
+  const KEY = {
+  ENTER: 13,
+  W: 87,
+  A: 65,
+  S: 83,
+  D: 68,
+  LEFT: 37,
+  UP: 38,
+  RIGHT: 39,
+  DOWN: 40,
+};
   // Game Item Objects
 
 
@@ -23,7 +33,7 @@ function runProgram(){
 
   Note: You can have multiple event listeners for different types of events.
   */
-  $(document).on('eventType', handleEvent);                          
+  $(document).on('keydown', handleKeyDown);                          
 
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
@@ -44,9 +54,14 @@ function runProgram(){
   
   Note: You can have multiple event handlers for different types of events.
   */
-  function handleEvent(event) {
-
-  }
+  function handleKeyDown(event) {
+    if (event.which === KEY.LEFT) {
+  console.log("left pressed");
+  
+}
+  //  else {
+  //   console.log(event.which);
+  //   }  
 
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
