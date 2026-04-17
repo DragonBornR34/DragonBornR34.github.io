@@ -21,6 +21,8 @@ function runProgram(){
   RIGHT: 39,
   DOWN: 40,
 };
+var walker
+
   // Game Item Objects
 
 
@@ -56,12 +58,32 @@ function runProgram(){
   */
   function handleKeyDown(event) {
     if (event.which === KEY.LEFT) {
-  console.log("left pressed");
-  
-}
-  //  else {
-  //   console.log(event.which);
-  //   }  
+  console.log("left arrow pressed");
+  }
+  if (event.which === KEY.UP) {
+  console.log("up arrow pressed");
+  }
+  if (event.which === KEY.RIGHT) {
+  console.log("right arrow pressed");
+  }
+  if (event.which === KEY.DOWN) {
+  console.log("down arrow pressed");
+  }
+  if (event.which === KEY.W) {
+  console.log("W pressed");
+  }
+  if (event.which === KEY.A) {
+  console.log("A pressed");
+  }
+  if (event.which === KEY.S) {
+  console.log("S pressed");
+  }
+  if (event.which === KEY.D) {
+  console.log("D pressed");
+  } else {
+     console.log(event.which);
+   }  
+}  
 
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
@@ -71,9 +93,8 @@ function runProgram(){
   function endGame() {
     // stop the interval timer
     clearInterval(interval);
-
+    
     // turn off event handlers
     $(document).off();
   }
-  
 }
