@@ -21,8 +21,15 @@ function runProgram(){
   RIGHT: 39,
   DOWN: 40,
 };
-var walker
+var walker = {
+  x: 2,
+  y: 2,
+  speedX: 2,
+  speedY: 2
+}
+// console.log(walker.x, walker.y);
 
+  
   // Game Item Objects
 
 
@@ -46,8 +53,8 @@ var walker
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    
-
+    repositionGameItem
+    redrawGameItem
   }
   
   /* 
@@ -88,8 +95,17 @@ var walker
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
-
+  function redrawGameItem() {
+    $("#walker").css("left", walker.x);
+    $("#walker").css("top", walker.y);
+  }
   
+  function repositionGameItem() {
+    horizontalSpeed = walker.speedX
+    verticalSpeed = walker.speedY
+  };
+  
+  console.log("Walker position:", walker.x, walker.y);  
   function endGame() {
     // stop the interval timer
     clearInterval(interval);
