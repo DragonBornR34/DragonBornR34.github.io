@@ -22,10 +22,10 @@ function runProgram(){
   DOWN: 40,
 };
 var walker = {
-  x: 2,
-  y: 2,
-  speedX: 2,
-  speedY: 2
+  x: 0,
+  y: 0,
+  speedX: 0,
+  speedY: 5
 }
 // console.log(walker.x, walker.y);
 
@@ -53,8 +53,8 @@ var walker = {
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    repositionGameItem
-    redrawGameItem
+    repositionGameItem();
+    redrawGameItem();
   }
   
   /* 
@@ -95,14 +95,15 @@ var walker = {
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
+
   function redrawGameItem() {
     $("#walker").css("left", walker.x);
     $("#walker").css("top", walker.y);
   }
   
   function repositionGameItem() {
-    horizontalSpeed = walker.speedX
-    verticalSpeed = walker.speedY
+    horizontalSpeed = walker.speedX + walker.x + walker.y
+    verticalSpeed = walker.speedY + walker.x + walker.y
   };
   
   console.log("Walker position:", walker.x, walker.y);  
