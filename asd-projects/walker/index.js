@@ -92,6 +92,19 @@ var walker = {
    }  
 }  
 
+if (event.which === KEY.LEFT) {
+  walker.speedX = walker.speedY - 5;
+  }
+  if (event.which === KEY.UP) {
+  walker.speedX = walker.speedX - 5;
+  }
+  if (event.which === KEY.RIGHT) {
+  walker.speedX = walker.speedY + 5;
+  }
+  if (event.which === KEY.DOWN) {
+  walker.speedX = walker.speedX - 5;
+  }
+
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
@@ -100,10 +113,10 @@ var walker = {
     $("#walker").css("left", walker.x);
     $("#walker").css("top", walker.y);
   }
-  
+  // debugger
   function repositionGameItem() {
-    horizontalSpeed = walker.speedX + walker.x + walker.y
-    verticalSpeed = walker.speedY + walker.x + walker.y
+    walker.x = walker.x + walker.speedX
+    walker.y = walker.y + walker.speedY
   };
   
   console.log("Walker position:", walker.x, walker.y);  
