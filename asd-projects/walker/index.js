@@ -66,15 +66,19 @@ var walker = {
   function handleKeyDown(event) {
     if (event.which === KEY.LEFT) {
   console.log("left arrow pressed");
+  walker.speedX = -5
   }
   if (event.which === KEY.UP) {
   console.log("up arrow pressed");
+  walker.speedY = 5;
   }
   if (event.which === KEY.RIGHT) {
   console.log("right arrow pressed");
+  walker.speedX = +5;
   }
   if (event.which === KEY.DOWN) {
   console.log("down arrow pressed");
+  walker.speedY = -5;
   }
   if (event.which === KEY.W) {
   console.log("W pressed");
@@ -90,20 +94,7 @@ var walker = {
   } else {
      console.log(event.which);
    }  
-   
-   if (event.which === KEY.LEFT) {
-     walker.speedX = walker.speedY - 5;
-    }
-    if (event.which === KEY.UP) {
-      walker.speedX = walker.speedX + 5;
-    }
-    if (event.which === KEY.RIGHT) {
-      walker.speedX = walker.speedY + 5;
-    }
-    if (event.which === KEY.DOWN) {
-      walker.speedX = walker.speedX - 5;
-    }
-  }  
+  }
 
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
