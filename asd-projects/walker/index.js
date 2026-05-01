@@ -60,7 +60,7 @@ var walker = {
   /* 
   This section is where you set up the event handlers for user input.
   For example, if you wanted to make an event handler for a click event, you should rename this function to 'handleClick', then write the code that should execute when the click event occurs.
-  
+  asdf
   Note: You can have multiple event handlers for different types of events.
   */
   function handleKeyDown(event) {
