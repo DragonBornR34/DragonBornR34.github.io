@@ -25,7 +25,7 @@ var walker = {
   x: 0,
   y: 0,
   speedX: 0,
-  speedY: 5
+  speedY: 0
 }
 // console.log(walker.x, walker.y);
 
