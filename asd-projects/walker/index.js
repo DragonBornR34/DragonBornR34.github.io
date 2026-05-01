@@ -90,20 +90,20 @@ var walker = {
   } else {
      console.log(event.which);
    }  
-}  
-
-if (event.which === KEY.LEFT) {
-  walker.speedX = walker.speedY - 5;
-  }
-  if (event.which === KEY.UP) {
-  walker.speedX = walker.speedX - 5;
-  }
-  if (event.which === KEY.RIGHT) {
-  walker.speedX = walker.speedY + 5;
-  }
-  if (event.which === KEY.DOWN) {
-  walker.speedX = walker.speedX - 5;
-  }
+   
+   if (event.which === KEY.LEFT) {
+     walker.speedX = walker.speedY - 5;
+    }
+    if (event.which === KEY.UP) {
+      walker.speedX = walker.speedX + 5;
+    }
+    if (event.which === KEY.RIGHT) {
+      walker.speedX = walker.speedY + 5;
+    }
+    if (event.which === KEY.DOWN) {
+      walker.speedX = walker.speedX - 5;
+    }
+  }  
 
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
