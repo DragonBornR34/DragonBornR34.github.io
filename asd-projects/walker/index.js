@@ -74,7 +74,7 @@ var walker = {
   }
   if (event.which === KEY.RIGHT) {
   console.log("right arrow pressed");
-  walker.speedX = +5;
+  walker.speedX = 5;
   }
   if (event.which === KEY.DOWN) {
   console.log("down arrow pressed");
